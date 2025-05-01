@@ -1,8 +1,8 @@
 <?php
-    $servername = "sql.freedb.tech";
-    $username = "freedb_your_username";
-    $password = "your_password";
-    $dbname = "freedb_your_dbname";
+    $servername = "sql7.freesqldatabase.com";
+    $username = "sql7776370";
+    $password = "U34yClizMD";
+    $dbname = "sql7776370";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
