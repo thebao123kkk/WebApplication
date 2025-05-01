@@ -3,21 +3,6 @@ session_start();
 include 'config.php'; // Thay thế kết nối PDO bằng kết nối MySQLi từ config.php
 
 // Xử lý đăng ký
-// if (isset($_POST['signup'])) {
-//     $username = $_POST['name'];
-//     $email = $_POST['email'];
-//     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Mã hóa mật khẩu
-
-//     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-//     $stmt->bind_param("sss", $username, $email, $password);
-    
-//     if ($stmt->execute()) {
-//         $signup_success = "Đăng ký thành công! Vui lòng đăng nhập.";
-//     } else {
-//         $signup_error = "Lỗi: " . $stmt->error;
-//     }
-//     $stmt->close();
-// }
 if (isset($_POST['signup'])) {
     $username = $_POST['name'];
     $email = $_POST['email'];
@@ -41,27 +26,6 @@ if (isset($_POST['signup'])) {
 }
 
 // Xử lý đăng nhập
-// if (isset($_POST['signin'])) {
-//     $email = $_POST['email'];
-//     $password = $_POST['password'];
-
-//     // Sửa thành cú pháp MySQLi
-//     $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE email = ?");
-//     $stmt->bind_param("s", $email);  // "s" nghĩa là kiểu string
-//     $stmt->execute();
-//     $result = $stmt->get_result();
-//     $user = $result->fetch_assoc();  // Lấy dữ liệu dạng associative array
-
-//     if ($user && password_verify($password, $user['password'])) {
-//         $_SESSION['user_id'] = $user['id'];
-//         $_SESSION['username'] = $user['username'];
-//         header("Location: home.php");
-//         exit();
-//     } else {
-//         $signin_error = "Email hoặc mật khẩu không đúng.";
-//     }
-//     $stmt->close();  // Đóng statement
-// }
 
 if (isset($_POST['signin'])) {
     $email = $_POST['email'];
@@ -75,14 +39,7 @@ if (isset($_POST['signin'])) {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
         
-        // Debug: Hiển thị thông tin để kiểm tra
-        echo "<pre>";
-        print_r($user);
-        echo "Input password: " . $password;
-        echo "Stored hash: " . $user['password'];
-        echo "Verification result: " . (password_verify($password, $user['password']) ? 'true' : 'false');
-        echo "</pre>";
-        
+
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
