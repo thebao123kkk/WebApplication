@@ -1,12 +1,11 @@
 <?php
-$config = json_decode(file_get_contents(__DIR__ . "/config.json"), true);
-$conn = new mysqli(
-    $config["host"],
-    $config["username"],
-    $config["password"],
-    $config["database"]
-);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    $servername = "sql.freedb.tech";
+    $username = "freedb_your_username";
+    $password = "your_password";
+    $dbname = "freedb_your_dbname";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 ?>
