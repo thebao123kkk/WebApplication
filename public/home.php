@@ -281,6 +281,18 @@ include 'config.php'; // Thay thế kết nối PDO bằng kết nối MySQLi t�
     </div>
   </footer>
       
+<script>
+  // Khi bấm nút "Log in"
+  document.getElementById('sign-in').addEventListener('click', function () {
+    window.location.href = 'form.php';
+  });
+
+  // Khi bấm nút "Sign up"
+  document.getElementById('sign-up').addEventListener('click', function () {
+    window.location.href = 'form.php';
+  });
+</script>
+
 </body>
 </html>
 
