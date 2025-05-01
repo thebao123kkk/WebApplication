@@ -1,6 +1,11 @@
 <?php
 session_start();
 include 'config.php'; // Thay thế kết nối PDO bằng kết nối MySQLi từ config.php
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: form.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

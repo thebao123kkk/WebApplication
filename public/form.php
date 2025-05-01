@@ -19,16 +19,16 @@ if (isset($_POST['signup'])) {
     $stmt->close();
 }
 
-// Xử lý đăng nhập
 if (isset($_POST['signin'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
+    // Sửa thành cú pháp MySQLi
+    $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);  // "s" nghĩa là kiểu string
     $stmt->execute();
     $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    $user = $result->fetch_assoc();  // Lấy dữ liệu dạng associative array
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
@@ -38,7 +38,7 @@ if (isset($_POST['signin'])) {
     } else {
         $signin_error = "Email hoặc mật khẩu không đúng.";
     }
-    $stmt->close();
+    $stmt->close();  // Đóng statement
 }
 ?>
 
