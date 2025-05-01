@@ -4,7 +4,7 @@ include 'config.php'; // Thay thế kết nối PDO bằng kết nối MySQLi t�
 
 // Xử lý đăng ký
 if (isset($_POST['signup'])) {
-    $username = $_POST['username'];
+    $username = $_POST['name'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Mã hóa mật khẩu
 
