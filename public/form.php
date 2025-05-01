@@ -2,10 +2,10 @@
 session_start();
 
 // Kết nối cơ sở dữ liệu
-$servername = "localhost";
-$username = "root"; // Thay bằng username MySQL của bạn
-$password = ""; // Thay bằng password MySQL của bạn
-$dbname = "smart_learning";
+$servername = "sql7.freesqldatabase.com";
+$username = "sql7776370"; // Thay bằng username MySQL của bạn
+$password = "U34yClizMD"; // Thay bằng password MySQL của bạn
+$dbname = "sql7776370";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
