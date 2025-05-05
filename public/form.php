@@ -43,7 +43,7 @@ if (isset($_POST['signin'])) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header("Location: takingTest.php");
+            header("Location: test.php");
             exit();
         } else {
             $signin_error = "Mật khẩu không đúng";
