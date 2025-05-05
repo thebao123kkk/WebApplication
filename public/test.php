@@ -1,3 +1,11 @@
+<?php 
+  include 'config.php'; 
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: form.php");
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
