@@ -1,9 +1,6 @@
 <?php 
+  session_start();
   include 'config.php'; 
-  if (!isset($_SESSION['user_id'])) {
-    header("Location: form.php");
-    exit();
-  }
 ?>
 
 <!DOCTYPE html>
@@ -74,8 +71,8 @@
           <p class="lead mb-4 text-secondary">
             Whether you're a beginner or looking to improve your Vietnamese skills, we provide easy-to-follow lessons, interactive exercises, and practical vocabulary to help you learn effectively.
           </p>
-          <button class="btn btn-primary px-4 py-2 rounded-pill fw-semibold shadow-sm">
-            Start Learning Now
+          <button class="btn btn-primary px-4 py-2 rounded-pill fw-semibold shadow-sm" onclick="window.location.href='takingTest.php';">
+            Start Testing Now
           </button>
         </div>
       </div>
