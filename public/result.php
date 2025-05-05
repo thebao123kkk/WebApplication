@@ -77,7 +77,7 @@ if (isset($_GET['score'])) {
         <p class="lead" style="max-width:430px">
           Whether you're a beginner or looking to improve your Vietnamese skills, we provide easy-to-follow lessons, interactive exercises, and practical vocabulary to help you learn effectively.
         </p>
-        <button class="btn rounded-pill px-4 py-2 mt-3" style="background-color: #fff8d4; width:250px" onclick="window.location.href='TakingTest.php';">
+        <button class="btn rounded-pill px-4 py-2 mt-3" style="background-color: #fff8d4; width:250px" onclick="window.location.href='takingTest.php';">
           Take Test Again
         </button>
       </div>
