@@ -8,5 +8,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    
+
+    // Thiết lập charset UTF-8 để tránh lỗi font tiếng Việt
+    $conn->set_charset("utf8mb4");
 ?>
